@@ -245,7 +245,7 @@ legend("topright", legend = names(results_MSEP_mean)[-1], col = 2:4, lwd = 2)
 plot(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM`, type = "l", xlab = "% cellwise outliers", ylab = "Average RMSEI",
      ylim = range(results_RMSEI_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2, col = 2)
 lines(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM-LASSO`, lwd = 2, lty = 1, col = 3)
-lines(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM-ElasticNet`, lwd = 2, lty = 1, col = 4)
+lines(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM-ElasticNet`, lwd = 2, lty = 2, col = 4)
 points(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM`, pch = 19, col = 2)
 points(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM-LASSO`, pch = 22, col = 3)
 points(results_RMSEI_mean$pct_cell_out, results_RMSEI_mean$`CRM-ElasticNet`, pch = 23, col =4)

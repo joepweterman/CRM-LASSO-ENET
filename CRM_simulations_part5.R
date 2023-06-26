@@ -6,7 +6,7 @@ rm(list = ls())
 # Setup -------------------------------------------------------------------------------------------
 
 # simulation setting - - - - - - - - - - - - - - -
-n_seq <- seq(150, 400, 50)                                  # number of cases
+n_seq <- seq(125, 400, 25)                                  # number of cases
 p <- 50                                    # number of predictor variables
 pct_case_out <- 0.05                       # percentage of casewise outliers
 pct_cell_out <- 0.10                       # sequences of percentages of cellwise outliers for each casewise outlier
@@ -240,7 +240,7 @@ plot(results_RMSEI_mean$n, results_RMSEI_mean$`CRM`, type = "l", xlab = "n", yla
      ylim = range(results_RMSEI_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2)
 lines(results_RMSEI_mean$n, results_RMSEI_mean$`CRM-LASSO`, lwd = 2, lty = 2)
 lines(results_RMSEI_mean$n, results_RMSEI_mean$`CRM-ElasticNet`, lwd = 2, lty = 3)
-legend("topleft", legend = names(results_RMSEI_mean)[-1], lty = 1:3, lwd = 2)
+legend("right", legend = names(results_RMSEI_mean)[-1], lty = 1:3, lwd = 2)
 
 # Execution time - - - - - - - - - - - - - - - - -
 cat("CRM average execution time:", round(mean(results_time$Time), 1), "seconds")

@@ -218,26 +218,35 @@ results_time_mean      <- aggregate(. ~ k, data = results_time,      FUN = mean)
 
 # Mean Absolute Error - - - - - - - - - - - - - -
 plot(results_MAE_mean$k, results_MAE_mean$`CRM`, type = "l", xlab = "k", ylab = "Average MAE",
-     ylim = range(results_MAE_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2)
-lines(results_MAE_mean$k, results_MAE_mean$`CRM-LASSO`,      lwd = 2, lty = 2)
-lines(results_MAE_mean$k, results_MAE_mean$`CRM-ElasticNet`,  lwd = 2, lty = 3)
-legend("topright", legend = names(results_MAE_mean)[-1], lty = 1:3, lwd = 2)
+     ylim = range(results_MAE_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2, col = 2)
+lines(results_MAE_mean$k, results_MAE_mean$`CRM-LASSO`,      lwd = 2, lty = 1, col = 3)
+lines(results_MAE_mean$k, results_MAE_mean$`CRM-ElasticNet`,  lwd = 2, lty = 1, col = 4)
+points(results_MAE_mean$k, results_MAE_mean$`CRM`, pch = 19 , col = 2)
+points(results_MAE_mean$k, results_MAE_mean$`CRM-LASSO`, pch = 22 , col = 3)
+points(results_MAE_mean$k, results_MAE_mean$`CRM-ElasticNet`, pch = 23 , col = 4)
+legend("topright", legend = names(results_MAE_mean)[-1], col = 2:4, lwd = 2)
 
 
 # Mean Squared Error of Prediction - - - - - - - -
 plot(results_MSEP_mean$k, results_MSEP_mean$`CRM`, type = "l", xlab = "k", ylab = "Average MSEP",
-     ylim = range(results_MSEP_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2)
-lines(results_MSEP_mean$k, results_MSEP_mean$`CRM-LASSO`,      lwd = 2, lty = 2)
-lines(results_MSEP_mean$k, results_MSEP_mean$`CRM-ElasticNet`,  lwd = 2, lty = 3)
-legend("topright", legend = names(results_MSEP_mean)[-1], lty = 1:3, lwd = 2)
+     ylim = range(results_MSEP_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2, col = 2)
+lines(results_MSEP_mean$k, results_MSEP_mean$`CRM-LASSO`,      lwd = 2, lty = 1, col = 3)
+lines(results_MSEP_mean$k, results_MSEP_mean$`CRM-ElasticNet`,  lwd = 2, lty = 1, col = 4)
+points(results_MSEP_mean$k, results_MSEP_mean$`CRM`, pch = 19 , col = 2)
+points(results_MSEP_mean$k, results_MSEP_mean$`CRM-LASSO`, pch = 22 , col = 3)
+points(results_MSEP_mean$k, results_MSEP_mean$`CRM-ElasticNet`, pch = 23 , col = 4)
+legend("topright", legend = names(results_MSEP_mean)[-1], col = 2:4, lwd = 2)
 
 
 # Root Mean Squared Error of Imputation - - - - -
 plot(results_RMSEI_mean$k, results_RMSEI_mean$`CRM`, type = "l", xlab = "k", ylab = "Average RMSEI",
-     ylim = range(results_RMSEI_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2)
-lines(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-LASSO`, lwd = 2, lty = 2)
-lines(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-ElasticNet`, lwd = 2, lty = 3)
-legend("topleft", legend = names(results_RMSEI_mean)[-1], lty = 1:3, lwd = 2)
+     ylim = range(results_RMSEI_mean[, -1]), las = 1, cex.axis = 1.2, cex.lab = 1.3, lwd = 2, col = 2)
+lines(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-LASSO`, lwd = 2, lty = 1, col = 3)
+lines(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-ElasticNet`, lwd = 2, lty = 2, col = 4)
+points(results_RMSEI_mean$k, results_RMSEI_mean$`CRM`, pch = 19 , col = 2)
+points(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-LASSO`, pch = 22 , col = 3)
+points(results_RMSEI_mean$k, results_RMSEI_mean$`CRM-ElasticNet`, pch = 23 , col = 4)
+legend("topleft", legend = names(results_RMSEI_mean)[-1], col = 2:4, lwd = 2)
 
 
 # Execution time - - - - - - - - - - - - - - - - -
